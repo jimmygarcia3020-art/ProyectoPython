@@ -16,25 +16,37 @@ class Carro:
 
 class ColaPrioritaria:
     def __init__(self):
-        self.heap = []
-        self.counter = itertools.count()
+        self.lista = []
 
     def encolar(self, carro):
-        orden_llegada = next(self.counter)
-        heapq.heappush(self.heap, (orden_llegada, carro))
+        self.lista.append(carro)
 
     def desencolar(self):
-        if not self.heap:
+        if len(self.lista) == 0:
             return None
-        return heapq.heappop(self.heap)[1]
+
+        mejor = self.lista[0]
+        for f in self.lista:
+            if f.llegada < mejor.llegada:
+                mejor = f
+
+        self.lista.remove(mejor)
+        return mejor
 
     def ver_primero(self):
-        if not self.heap:
+        if len(self.lista) == 0:
             return None
-        return self.heap[0][1]
+
+        mejor = self.lista[0]
+        for f in self.lista:
+            if f.llegada < mejor.llegada:
+                mejor = f
+        
+        return mejor
 
     def esta_vacia(self):
-        return len(self.heap) == 0
+        return len(self.lista) == 0
+
 
 
 
