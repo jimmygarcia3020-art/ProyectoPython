@@ -1,8 +1,5 @@
 # DEF DE LA COLA PRIORITARIA
 
-import heapq
-import itertools
-
 class Carro:
     def __init__(self, placa, marca, modelo, llegada):
         self.placa = placa
@@ -181,4 +178,10 @@ for c in pila.mostrar():
 
 print("\nÁrbol en inorden:")
 re_inorden(raiz)
+print()
+print("\nÁrbol en preorden:")
+re_preorden(raiz)
+print()
+print("\nÁrbol en posorden:")
+re_posorden(raiz)
 print()
