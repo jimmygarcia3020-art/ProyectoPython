@@ -136,7 +136,7 @@ print("Ejemplo: ABC-123 Toyota Corolla 1")
 print("Escribe 'fin' para terminar.\n")
 
 while True:
-    linea = input("ESCRIBE PENDEJO >> ")
+    linea = input("Ingresar texto >> ")
 
     if linea == "fin":
         break
